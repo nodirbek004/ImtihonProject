@@ -10,7 +10,7 @@ namespace Poliklinika.Infrastructure.Repositories;
 
 public class Repository<T> : IRepository<T> where T : Auditable
 {
-    protected readonly AppDbContext _appDbContext;
+    public readonly AppDbContext _appDbContext;
     private readonly DbSet<T> _dbSet;
 
 
@@ -41,7 +41,7 @@ public class Repository<T> : IRepository<T> where T : Auditable
         =>_dbSet.AsQueryable();
 
 
-    public async Task<T> GetByIdAsync(int id)
+    public async Task<T> GetByIdAsync(long id)
         =>await _dbSet.FindAsync(id);
 
 

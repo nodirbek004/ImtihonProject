@@ -6,7 +6,7 @@ public interface IRepository<T>where T : Auditable
 {
     Task<T> CreateAsync(T entity);
     T Update(T entity);
-    Task<T> GetByIdAsync(int id);
+    Task<T> GetByIdAsync(long id);
     void Delete(T entity);
     IQueryable<T> GetAllAsync();
     Task<int> SaveAsync();

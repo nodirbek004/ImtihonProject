@@ -16,6 +16,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddTransient<IPatientService, PatientService>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddTransient<IRepository<PatientEntity>,Repository<PatientEntity>>();
+builder.Services.AddTransient<IDoctorService, DoctorService>();
+builder.Services.AddTransient<IRepository<DoctorEntity>, Repository<DoctorEntity>>();
 // Add services to the container.
 
 builder.Services.AddControllers();

@@ -6,9 +6,9 @@ namespace Poliklinika.Application.Interfaces;
 public interface IPatientService
 {
     ValueTask<PatientEntity> CreateAsync(PatientCreationDto patientCreationDto);
-    ValueTask<PatientEntity> UpdateAsync(PatientUpdateDto updateDto);
-    ValueTask<bool> DeleteAsync(int Id);
-    ValueTask<PatientEntity> GetByIdAsync(int Id);
+    ValueTask<bool> UpdateAsync(PatientUpdateDto updateDto);
+    ValueTask<bool> DeleteAsync(long Id);
+    ValueTask<PatientEntity> GetByIdAsync(long Id);
     ValueTask<IEnumerable<PatientEntity>> GetAllAsync();
     ValueTask<PatientEntity> GetByNameAsync(string Name);
 

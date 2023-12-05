@@ -7,3 +7,18 @@ services:
     build:
       context: .
       dockerfile: Poliklinika.Api/Dockerfile
+    environment:
+      - ConnectionStrings__DefaultConnection= Server=SqlServer,1433;Database=master;User=sa;Password=root;
+    
+  
+  SqlServer:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=root
+    ports:
+      - "1433:1433"
+    volumes:
+      - ./poliklinika-data:/var/lib/postgresql/data
+    
+      

@@ -44,7 +44,7 @@ public class PatientService : IPatientService
         }
     }
 
-    public async ValueTask<bool> DeleteAsync(int Id)
+    public async ValueTask<bool> DeleteAsync(long Id)
     {
         var res= await  unitOfWork.PatientRepository.GetByIdAsync(Id);
         if(res == null)
@@ -52,7 +52,7 @@ public class PatientService : IPatientService
             throw new PatientNotFoundException();
         }
         unitOfWork.PatientRepository.Delete(res);
-        unitOfWork.SaveAsync();
+        await unitOfWork.SaveAsync();
         return true;
     }
 
@@ -70,18 +70,39 @@ public class PatientService : IPatientService
         }
     }
 
-    public ValueTask<PatientEntity> GetByIdAsync(int Id)
+    public async ValueTask<PatientEntity> GetByIdAsync(long Id)
     {
-        throw new NotImplementedException();
+        var res =await unitOfWork.PatientRepository.GetByIdAsync(Id);
+        if(res == null)
+        {
+            throw new PatientNotFoundException();
+        }
+        return res;
     }
 
-    public ValueTask<PatientEntity> GetByNameAsync(string Name)
+    public async ValueTask<PatientEntity> GetByNameAsync(string Name)
     {
-        throw new NotImplementedException();
+        var res=unitOfWork.PatientRepository.SearchByName(Name);
+        if(res == null)
+        {
+            throw new PatientNotFoundException();
+        }
+
+        return (PatientEntity)res;
     }
 
-    public ValueTask<PatientEntity> UpdateAsync(PatientUpdateDto updateDto)
+    public async ValueTask<bool> UpdateAsync(PatientUpdateDto updateDto)
     {
-        throw new NotImplementedException();
+        var existPatient=await unitOfWork.PatientRepository.GetByIdAsync(updateDto.Id);
+        if (existPatient == null)
+        {
+            throw new PatientNotFoundException();
+        }
+        var mappedPatient = mapper.Map(updateDto, existPatient);
+
+        var result = unitOfWork.PatientRepository.Update(mappedPatient);
+        await unitOfWork.SaveAsync();
+        return true;
+
     }
 }

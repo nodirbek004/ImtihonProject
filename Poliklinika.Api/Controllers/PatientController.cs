@@ -26,6 +26,30 @@ public class PatientController : ControllerBase
         var result=await patientService.GetAllAsync();
         return Ok(result);
     }
+    [HttpDelete]
+    public async ValueTask<IActionResult> Delete(long id)
+    {
+        var  result =await patientService.DeleteAsync(id);
+        return Ok(result);
+    }
+    [HttpGet]
+    public async ValueTask<IActionResult> GetByIdAsync(long id) 
+    {
+        var result = await patientService.GetByIdAsync(id);
+        return Ok(result);
+    }
 
+    [HttpGet]
+    public async ValueTask<IActionResult> SearchByName(string name) 
+    {
+        var result= patientService.GetByNameAsync(name);
+        return Ok(result);
+    }
+    [HttpPut]
+    public async ValueTask<IActionResult> Update([FromForm]PatientUpdateDto dto)
+    {
+        var result= await patientService.UpdateAsync(dto);
+        return Ok(result);
+    }
     
 }

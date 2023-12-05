@@ -11,9 +11,18 @@ public class UnitOfWork : IUnitOfWork
     {
         appDbContext = dbContext;
         PatientRepository = new PatientRepository(dbContext);
+        DoctorRepository = new DoctorRepository(dbContext);
+
     }
 
+
     public IPatientRepository PatientRepository { get;  }
+
+    public IDoctorRepository DoctorRepository { get; }
+
+    public IAppointmentRepository AppointmentRepository { get; }
+    public IMedicalRecordRepository MedicalRecordRepository { get; }
+
     public async Task<int> SaveAsync()
          => await this.appDbContext.SaveChangesAsync();
 }
