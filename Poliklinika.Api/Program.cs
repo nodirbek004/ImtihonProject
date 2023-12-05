@@ -18,6 +18,9 @@ builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddTransient<IRepository<PatientEntity>,Repository<PatientEntity>>();
 builder.Services.AddTransient<IDoctorService, DoctorService>();
 builder.Services.AddTransient<IRepository<DoctorEntity>, Repository<DoctorEntity>>();
+builder.Services.AddTransient<IMedicalRecordService, MedicalRecordService>();
+builder.Services.AddTransient<AppontmentService>();
+
 // Add services to the container.
 
 builder.Services.AddControllers();

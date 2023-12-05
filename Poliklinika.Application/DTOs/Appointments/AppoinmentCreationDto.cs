@@ -7,6 +7,6 @@ public class AppoinmentCreationDto
 {
     
     public long DoctorId { get; set; }
-  
+    public long PatientId { get; set; }
     public Specialty SpecifyingDate { get; set; }
 }

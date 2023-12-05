@@ -12,6 +12,8 @@ public class UnitOfWork : IUnitOfWork
         appDbContext = dbContext;
         PatientRepository = new PatientRepository(dbContext);
         DoctorRepository = new DoctorRepository(dbContext);
+        MedicalRecordRepository = new MedicalRecordRepository(dbContext);
+        AppointmentRepository = new AppointmentRepository(dbContext);
 
     }
 
