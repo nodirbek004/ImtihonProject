@@ -20,3 +20,9 @@ services:
       - ./poliklinika-data:/var/lib/postgresql/data
     
       
+  getaway.api:
+    image: ${DOCKER_REGISTRY-}getawayapi
+    build:
+      context: .
+      dockerfile: Getaway/Getaway.Api/Dockerfile
+
