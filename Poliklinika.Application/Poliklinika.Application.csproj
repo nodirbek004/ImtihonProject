@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Poliklinka.Domain\Poliklinka.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
