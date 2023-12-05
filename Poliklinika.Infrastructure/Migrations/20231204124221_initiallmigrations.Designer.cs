@@ -12,8 +12,8 @@ using Poliklinika.Infrastructure.Contexts;
 namespace Poliklinika.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231203131811_Initial")]
-    partial class Initial
+    [Migration("20231204124221_initiallmigrations")]
+    partial class initiallmigrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

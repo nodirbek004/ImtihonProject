@@ -1,5 +1,10 @@
 using Microsoft.EntityFrameworkCore;
+using Poliklinika.Application.Interfaces;
+using Poliklinika.Application.Services;
 using Poliklinika.Infrastructure.Contexts;
+using Poliklinika.Infrastructure.IRepasitories;
+using Poliklinika.Infrastructure.Repositories;
+using Poliklinka.Domain.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +13,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
+builder.Services.AddTransient<IPatientService, PatientService>();
+builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+builder.Services.AddTransient<IRepository<PatientEntity>,Repository<PatientEntity>>();
 // Add services to the container.
 
 builder.Services.AddControllers();

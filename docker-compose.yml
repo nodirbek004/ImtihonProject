@@ -1,0 +1,9 @@
+version: '3.4'
+networks:
+  backend:
+services:
+  poliklinika.api:
+    image: ${DOCKER_REGISTRY-}poliklinikaapi
+    build:
+      context: .
+      dockerfile: Poliklinika.Api/Dockerfile

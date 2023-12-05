@@ -12,5 +12,5 @@ public class AppDbContext:DbContext
     public DbSet<DoctorEntity> Doctors { get; set; }
     public DbSet<AppointmentEntity> AppointmentEntities { get; set; }
     public DbSet<MedicalRecord> MedicalRecords { get; set; }
-    public DbSet<PatientEntity> PatientEntities { get; set; }
+    public DbSet<PatientEntity> Patients {get; set; }
 }

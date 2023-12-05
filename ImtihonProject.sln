@@ -3,15 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poliklinika.Api", "Poliklinika.Api\Poliklinika.Api.csproj", "{F5F5EFE8-5A43-4BAC-9854-95D9591BAE26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poliklinika.Api", "Poliklinika.Api\Poliklinika.Api.csproj", "{F5F5EFE8-5A43-4BAC-9854-95D9591BAE26}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Poliklinika", "Poliklinika", "{3B74ABBE-6E46-456C-BDAB-897A13CF906C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poliklinka.Domain", "Poliklinka.Domain\Poliklinka.Domain.csproj", "{DCADAC6E-09C6-4310-952C-776E04C67FED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poliklinka.Domain", "Poliklinka.Domain\Poliklinka.Domain.csproj", "{DCADAC6E-09C6-4310-952C-776E04C67FED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poliklinika.Application", "Poliklinika.Application\Poliklinika.Application.csproj", "{2354F9AD-B516-45C7-93A1-9C2913AFDAF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poliklinika.Application", "Poliklinika.Application\Poliklinika.Application.csproj", "{2354F9AD-B516-45C7-93A1-9C2913AFDAF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poliklinika.Infrastructure", "Poliklinika.Infrastructure\Poliklinika.Infrastructure.csproj", "{3DB2895C-70A7-469B-9B03-E93292CB9B39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poliklinika.Infrastructure", "Poliklinika.Infrastructure\Poliklinika.Infrastructure.csproj", "{3DB2895C-70A7-469B-9B03-E93292CB9B39}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{610D562B-CF3B-4EC2-96C4-5AA720E5B731}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Yandex", "Yandex", "{12564FE5-71D3-4CAA-AE73-AE4F4E2F9AC8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Restarant", "Restarant", "{63E84A2C-91A4-4089-9D4B-BEDBB5571D8B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Payment", "Payment", "{2EA4F069-C6B9-4737-8287-96ADADA7799B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +43,10 @@ Global
 		{3DB2895C-70A7-469B-9B03-E93292CB9B39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DB2895C-70A7-469B-9B03-E93292CB9B39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DB2895C-70A7-469B-9B03-E93292CB9B39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{610D562B-CF3B-4EC2-96C4-5AA720E5B731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{610D562B-CF3B-4EC2-96C4-5AA720E5B731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{610D562B-CF3B-4EC2-96C4-5AA720E5B731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{610D562B-CF3B-4EC2-96C4-5AA720E5B731}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
