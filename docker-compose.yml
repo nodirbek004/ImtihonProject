@@ -26,3 +26,10 @@ services:
       context: .
       dockerfile: Getaway/Getaway.Api/Dockerfile
 
+
+  restarant.api:
+    image: ${DOCKER_REGISTRY-}restarantapi
+    build:
+      context: .
+      dockerfile: Restarant/Restarant.Api/Dockerfile
+

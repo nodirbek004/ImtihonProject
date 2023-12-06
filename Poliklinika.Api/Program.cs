@@ -20,6 +20,7 @@ builder.Services.AddTransient<IDoctorService, DoctorService>();
 builder.Services.AddTransient<IRepository<DoctorEntity>, Repository<DoctorEntity>>();
 builder.Services.AddTransient<IMedicalRecordService, MedicalRecordService>();
 builder.Services.AddTransient<AppontmentService>();
+builder.Services.AddMemoryCache();
 
 // Add services to the container.
 

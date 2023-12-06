@@ -1,30 +1,23 @@
-﻿using HospitalInformationSystem.Domain.Commons;
-using Microsoft.EntityFrameworkCore;
-using Poliklinika.Infrastructure.Contexts;
-using Poliklinika.Infrastructure.IRepasitories;
-using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+﻿using Microsoft.EntityFrameworkCore;
+using Restarant.Domain.Commons;
+using Restarant.Infrastructure.DbContexts;
+using Restarant.Infrastructure.IRepositories;
 
-namespace Poliklinika.Infrastructure.Repositories;
+namespace Restarant.Infrastructure.Repositoies;
 
-public class Repository<T> : IRepository<T> where T : Auditable
+public class Repositories<T>:IRepository<T> where T : AudiTable
 {
     public readonly AppDbContext _appDbContext;
     private readonly DbSet<T> _dbSet;
-
-
-    public Repository(AppDbContext appDbContext)
+    public Repositories(AppDbContext appDbContext)
     {
         this._appDbContext = appDbContext;
         _dbSet = appDbContext.Set<T>();
     }
-
-
     public async Task<T> CreateAsync(T entity)
     {
         var res = await _dbSet.AddAsync(entity);
-       
+
         return entity;
     }
 
@@ -34,11 +27,11 @@ public class Repository<T> : IRepository<T> where T : Auditable
     }
 
     public IQueryable<T> GetAllAsync()
-        =>_dbSet.AsQueryable();
+        => _dbSet.AsQueryable();
 
 
     public async Task<T> GetByIdAsync(long id)
-        =>await _dbSet.FindAsync(id);
+        => await _dbSet.FindAsync(id);
 
 
 
