@@ -33,3 +33,17 @@ services:
       context: .
       dockerfile: Restarant/Restarant.Api/Dockerfile
 
+
+  yandex.api:
+    image: ${DOCKER_REGISTRY-}yandexapi
+    build:
+      context: .
+      dockerfile: Yandex/Yandex.Api/Dockerfile
+
+
+  jwt.api:
+    image: ${DOCKER_REGISTRY-}jwtapi
+    build:
+      context: .
+      dockerfile: Jwt/Jwt.Api/Dockerfile
+

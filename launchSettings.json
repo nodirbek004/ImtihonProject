@@ -6,7 +6,9 @@
       "serviceActions": {
         "poliklinika.api": "StartDebugging",
         "getaway.api": "StartDebugging",
-        "restarant.api": "StartDebugging"
+        "restarant.api": "StartDebugging",
+        "yandex.api": "StartDebugging",
+        "jwt.api": "StartDebugging"
       }
     }
   }

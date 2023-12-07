@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Poliklinika.Application.DTOs.Appointments;
 using Poliklinika.Application.Services;
 
@@ -6,6 +7,7 @@ namespace Poliklinika.Api.Controllers;
 
 [Route("api/[controller]/[action]")]
 [ApiController]
+[Authorize]
 public class AppointmentController : ControllerBase
 {
     private readonly AppontmentService _appontmentService;

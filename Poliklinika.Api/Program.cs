@@ -1,10 +1,12 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Poliklinika.Application.Interfaces;
 using Poliklinika.Application.Services;
 using Poliklinika.Infrastructure.Contexts;
 using Poliklinika.Infrastructure.IRepasitories;
 using Poliklinika.Infrastructure.Repositories;
 using Poliklinka.Domain.Entities;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +14,20 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+builder.Services.AddAuthentication("Bearer")
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidIssuer = "Issuer",
+            ValidateAudience = true,
+            ValidAudience = "Audience",
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("mana-shu-security-key"))
+        };
+    });
 
 builder.Services.AddTransient<IPatientService, PatientService>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();

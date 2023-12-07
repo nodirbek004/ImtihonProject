@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Restarant.Application.DTOs.Client;
 using Restarant.Application.Interfaces;
@@ -8,6 +9,7 @@ namespace Restarant.Api.Controllers;
 
 [Route("api/[controller]/[action]")]
 [ApiController]
+[Authorize]
 public class ClientController : ControllerBase
 {
     private readonly IClientService clientService;

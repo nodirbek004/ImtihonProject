@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Restarant.Application.DTOs.Cook;
 using Restarant.Application.Interfaces;
 using System.Diagnostics.Contracts;
@@ -7,6 +8,7 @@ namespace Restarant.Api.Controllers;
 
 [Route("api/[controller]/[action]")]
 [ApiController]
+[Authorize]
 public class CookController : ControllerBase
 {
     private readonly ICookService cookService;

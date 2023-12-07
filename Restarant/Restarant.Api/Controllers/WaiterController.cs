@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Restarant.Application.DTOs.Waiter;
 using Restarant.Application.Interfaces;
 
@@ -6,6 +7,7 @@ namespace Restarant.Api.Controllers;
 
 [Route("api/[controller]/[action]")]
 [ApiController]
+[Authorize]
 public class WaiterController : ControllerBase
 {
     private readonly IWaiterService waiterService;

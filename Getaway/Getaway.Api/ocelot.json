@@ -1,8 +1,7 @@
 {
   "Routes": [
     {
-      "UpstreamPathTemplate": "/api/Doctor/CreateAsync",
-      "UpstreamHttpMethod": [  "Post" ],
+      "DownstreamPathTemplate": "/api/Doctor/GetAllAsync",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -10,11 +9,11 @@
           "Port": 80
         }
       ],
-      "DownstreamPathTemplate": "/Doctor/Create"
+      "UpstreamPathTemplate": "/allDoctor",
+      "UpstreamHttpMethod": [ "Get" ]
     },
     {
-      "UpstreamPathTemplate": "/api/Doctor/UpdateAsync",
-      "UpstreamHttpMethod": [  "Put" ],
+      "DownstreamPathTemplate": "/api/Doctor/CreateAsync",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -22,8 +21,12 @@
           "Port": 80
         }
       ],
-      "DownstreamPathTemplate": "/api/Doctor/Update"
+      "UpstreamPathTemplate": "/Create",
+      "UpstreamHttpMethod": [ "Post" ]
     }
+
+
+
   ],
   "GlobalConfiguration": {
     "BaseUrl": "https://localhost:5000"

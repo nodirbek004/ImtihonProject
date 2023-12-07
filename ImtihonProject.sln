@@ -17,21 +17,31 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Jwt", "Jwt", "{A657142A-C48D-4EDD-A475-9ED5CDC4A315}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jwt.Api", "Jwt\Jwt.Api\Jwt.Api.csproj", "{EAB351AF-F4D9-4E55-AE65-3E18ADE31072}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jwt.Api", "Jwt\Jwt.Api\Jwt.Api.csproj", "{EAB351AF-F4D9-4E55-AE65-3E18ADE31072}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Getaway", "Getaway", "{55F9D3C3-EC0C-4CBA-BEED-12B1FEF605CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Getaway.Api", "Getaway\Getaway.Api\Getaway.Api.csproj", "{7E72D099-A502-4907-A8FD-42B695EC9D6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Getaway.Api", "Getaway\Getaway.Api\Getaway.Api.csproj", "{7E72D099-A502-4907-A8FD-42B695EC9D6D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Restarant", "Restarant", "{B52E3826-8866-47F5-8B39-4EE214CE4EB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restarant.Api", "Restarant\Restarant.Api\Restarant.Api.csproj", "{655D50D5-B239-40A6-B42C-B9053080F436}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restarant.Api", "Restarant\Restarant.Api\Restarant.Api.csproj", "{655D50D5-B239-40A6-B42C-B9053080F436}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restarant.Application", "Restarant\Restarant.Application\Restarant.Application.csproj", "{B267D7B3-DBAB-423A-9FFB-3EA3FCFF1E7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restarant.Application", "Restarant\Restarant.Application\Restarant.Application.csproj", "{B267D7B3-DBAB-423A-9FFB-3EA3FCFF1E7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restarant.Infrastructure", "Restarant\Restarant.Infrastructure\Restarant.Infrastructure.csproj", "{126E94E4-DA5E-4807-88ED-0523D7D6A1E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restarant.Infrastructure", "Restarant\Restarant.Infrastructure\Restarant.Infrastructure.csproj", "{126E94E4-DA5E-4807-88ED-0523D7D6A1E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restarant.Domain", "Restarant\Restarant.Domain\Restarant.Domain.csproj", "{B9B09437-E7A3-4F24-8666-A5FF88A96999}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restarant.Domain", "Restarant\Restarant.Domain\Restarant.Domain.csproj", "{B9B09437-E7A3-4F24-8666-A5FF88A96999}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Yandex", "Yandex", "{BCD4A215-8C52-4D3B-85BC-E1DBD91ECF96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yandex.Api", "Yandex\Yandex.Api\Yandex.Api.csproj", "{172E7536-99EF-4688-A165-F4816A3E7480}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yandex.Domain", "Yandex\Yandex.Domain\Yandex.Domain.csproj", "{71422E4B-0466-4C25-98EF-3D95A23758DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yandex.Application", "Yandex\Yandex.Application\Yandex.Application.csproj", "{AAAF28B2-396B-4A1B-B6E6-D12B14B4A55B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yandex.Infrastructure", "Yandex\Yandex.Infrastructure\Yandex.Infrastructure.csproj", "{7D50A88E-F7C4-419A-A502-15E7301D8FAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +93,22 @@ Global
 		{B9B09437-E7A3-4F24-8666-A5FF88A96999}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9B09437-E7A3-4F24-8666-A5FF88A96999}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9B09437-E7A3-4F24-8666-A5FF88A96999}.Release|Any CPU.Build.0 = Release|Any CPU
+		{172E7536-99EF-4688-A165-F4816A3E7480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{172E7536-99EF-4688-A165-F4816A3E7480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{172E7536-99EF-4688-A165-F4816A3E7480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{172E7536-99EF-4688-A165-F4816A3E7480}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71422E4B-0466-4C25-98EF-3D95A23758DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71422E4B-0466-4C25-98EF-3D95A23758DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71422E4B-0466-4C25-98EF-3D95A23758DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71422E4B-0466-4C25-98EF-3D95A23758DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAAF28B2-396B-4A1B-B6E6-D12B14B4A55B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAAF28B2-396B-4A1B-B6E6-D12B14B4A55B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAAF28B2-396B-4A1B-B6E6-D12B14B4A55B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAAF28B2-396B-4A1B-B6E6-D12B14B4A55B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D50A88E-F7C4-419A-A502-15E7301D8FAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D50A88E-F7C4-419A-A502-15E7301D8FAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D50A88E-F7C4-419A-A502-15E7301D8FAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D50A88E-F7C4-419A-A502-15E7301D8FAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,6 +124,10 @@ Global
 		{B267D7B3-DBAB-423A-9FFB-3EA3FCFF1E7E} = {B52E3826-8866-47F5-8B39-4EE214CE4EB1}
 		{126E94E4-DA5E-4807-88ED-0523D7D6A1E7} = {B52E3826-8866-47F5-8B39-4EE214CE4EB1}
 		{B9B09437-E7A3-4F24-8666-A5FF88A96999} = {B52E3826-8866-47F5-8B39-4EE214CE4EB1}
+		{172E7536-99EF-4688-A165-F4816A3E7480} = {BCD4A215-8C52-4D3B-85BC-E1DBD91ECF96}
+		{71422E4B-0466-4C25-98EF-3D95A23758DF} = {BCD4A215-8C52-4D3B-85BC-E1DBD91ECF96}
+		{AAAF28B2-396B-4A1B-B6E6-D12B14B4A55B} = {BCD4A215-8C52-4D3B-85BC-E1DBD91ECF96}
+		{7D50A88E-F7C4-419A-A502-15E7301D8FAD} = {BCD4A215-8C52-4D3B-85BC-E1DBD91ECF96}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {69285D5A-6DB8-41BC-9106-2ABA3FC6F2D6}
