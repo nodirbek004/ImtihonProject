@@ -1,26 +1,56 @@
-﻿using Jwt.Api.Models;
-using Jwt.Api.Services;
+﻿using Authtorisation.Api.Data;
+using Authtorisation.Api.Services;
+using Jwt.Api.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Jwt.Api.Controllers;
-
-[Route("api/[controller]")]
-[ApiController]
-
+namespace Authtorisation.Api.Controllers
+{
+    [Route("api/[controller]/[action]")]
+    [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly TokenGeneratorService _tokenGenerator;
+        private readonly AuthServices _tokenGenerator;
+        private readonly AppDbContext _context;
 
-        public AuthController(TokenGeneratorService tokenGenerator)
+        public AuthController(AuthServices tokenGenerator, AppDbContext context)
         {
             _tokenGenerator = tokenGenerator;
+            _context = context;
         }
 
         [HttpPost]
-        public async ValueTask<IActionResult> Login(LoginDTO login)
+        public async ValueTask<IActionResult> Login(LoginDto login)
         {
-            var token = _tokenGenerator.GenerateToken(login);
+            var user = _context.Users.FirstOrDefault(x => x.UserName == login.Username && x.Password == login.Password);
+            if (user == null)
+            {
+                return NotFound("User topilmadi");
+            }
+
+            var userDTO = new UserDTO()
+            {
+                Role = user.Role,
+                UserName = user.UserName,
+            };
+
+            var token = _tokenGenerator.GenerateToken(userDTO);
+            return Ok(token);
+        }
+
+        [HttpPost]
+        public async ValueTask<IActionResult> Register(User user)
+        {
+            _context.Users.AddAsync(user);
+            await _context.SaveChangesAsync();
+
+            var userDTO = new UserDTO()
+            {
+                Role = user.Role,
+                UserName = user.UserName,
+            };
+            var token = _tokenGenerator.GenerateToken(userDTO);
+
             return Ok(token);
         }
     }
-
+}

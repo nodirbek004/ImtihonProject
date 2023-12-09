@@ -8,7 +8,7 @@ namespace Restarant.Api.Controllers;
 
 [Route("api/[controller]/[action]")]
 [ApiController]
-[Authorize]
+
 public class CookController : ControllerBase
 {
     private readonly ICookService cookService;

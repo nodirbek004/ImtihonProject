@@ -8,7 +8,8 @@ namespace Yandex.Api.Controllers;
 
 [Route("api/[controller]/[action]")]
 [ApiController]
-[Authorize]
+
+
 public class CarCantroller : ControllerBase
 {
     private readonly IMediator mediator;
@@ -36,6 +37,7 @@ public class CarCantroller : ControllerBase
         return Ok(result);
     }
     [HttpGet]
+    [Authorize(Roles ="Admin")]
     public async ValueTask<IActionResult> GetAllAsync()
     {
         var result = await mediator.Send(new GetCarInformationCommand());

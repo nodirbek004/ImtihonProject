@@ -8,7 +8,7 @@ namespace Yandex.Api.Controllers;
 
 [Route("api/[controller]/[action]")]
 [ApiController]
-[Authorize]
+
 public class UserController : ControllerBase
 {
     private readonly IMediator mediator;

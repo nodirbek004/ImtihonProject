@@ -8,7 +8,7 @@ namespace Yandex.Api.Controllers;
 
 [Route("api/[controller]/[action]")]
 [ApiController]
-[Authorize]
+
 public class OrderController : ControllerBase
 {
     private readonly IMediator mediator;

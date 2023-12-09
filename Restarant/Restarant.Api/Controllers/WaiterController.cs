@@ -7,7 +7,7 @@ namespace Restarant.Api.Controllers;
 
 [Route("api/[controller]/[action]")]
 [ApiController]
-[Authorize]
+
 public class WaiterController : ControllerBase
 {
     private readonly IWaiterService waiterService;
@@ -34,6 +34,7 @@ public class WaiterController : ControllerBase
         return Ok(result);
     }
     [HttpGet]
+    [Authorize(Roles = "User")]
     public async ValueTask<IActionResult> GetAllAsync()
     {
         var result=await waiterService.GetAllAsync();

@@ -7,7 +7,7 @@ namespace Restarant.Api.Controllers;
 
 [Route("api/[controller]/[action]")]
 [ApiController]
-[Authorize]
+[Authorize(Roles = "User")]
 public class AdminController : ControllerBase
 {
     private readonly IAdminService _adminService;

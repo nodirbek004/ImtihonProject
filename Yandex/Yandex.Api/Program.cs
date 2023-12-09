@@ -23,7 +23,7 @@ builder.Services.AddAuthentication("Bearer")
             ValidateAudience = true,
             ValidAudience = "Audience",
             ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("mana-shu-security-key"))
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("asosiyUser711w15ed16516w6e51de65f1ef1e6f51ef51"))
         };
     });
 

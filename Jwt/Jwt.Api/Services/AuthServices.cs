@@ -4,19 +4,19 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace Jwt.Api.Services
+namespace Authtorisation.Api.Services
 {
-    public class TokenGeneratorService
+    public class AuthServices
     {
-        public string GenerateToken(LoginDTO loginDTO)
+        public string GenerateToken(UserDTO userDTO)
         {
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("mana-shu-security-key"));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("asosiyUser711w15ed16516w6e51de65f1ef1e6f51ef51"));
             var signingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var claims = new List<Claim>()
             {
-                new Claim(ClaimTypes.Email, loginDTO.Email),
-                new Claim(ClaimTypes.Role, "User")
+                new Claim(ClaimTypes.Name, userDTO.UserName),
+                new Claim(ClaimTypes.Role, userDTO.Role)
             };
 
             var token = new JwtSecurityToken(
@@ -30,4 +30,3 @@ namespace Jwt.Api.Services
         }
     }
 }
-
